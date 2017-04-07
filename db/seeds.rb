@@ -7,14 +7,26 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # json = ActiveSupport::JSON.decode(File.read('http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'))
 
-# require 'json'
-#   require 'open-uri'
-
-#  ingredients = JSON.parse(open("http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list").read)
-#   ingredients["drinks"].each do |ing_hash|
-#     ingredient_name = ing_hash["strIngredient1"]
-#     Ingredient.create!(name: ingredient_name)
-#   end
 
 
-(1..5).times
+Cocktail.destroy_all
+Ingredient.destroy_all
+
+
+
+25.times do
+  cocktail = Cocktail.create(
+    name: Faker::LordOfTheRings.unique.character
+  )
+end
+
+
+
+ingredients = JSON.parse(open("http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list").read)
+  ingredients["drinks"].each do |ing_hash|
+    ingredient_name = ing_hash["strIngredient1"]
+    Ingredient.create!(name: ingredient_name)
+  end
+
+
+

@@ -1,9 +1,18 @@
+<div class="text-center">
 <h1>Show</h1>
-<%= simple_form_for(@cocktail) do |f| %>
-    <p> Cocktail name<%= f.input :name %></p>
-  <%= f.input :ingredient_id %>
-  <%= f.input :dose_id %>
 
 
-<%= link_to "Home", cocktails_path, class: "btn btn-primary" %>
-  <% end %>
+<div class="text-center">
+<h1><%= @cocktail.name %></h1>
+<ul>
+  <% @cocktail.doses.each do |dose| %>
+    <li><%= dose.ingredient.name %> - <%= dose.description %></li>
+    <% end %>
+
+</ul>
+
+<%= link_to "Return to cocktail list", cocktails_path, class: "btn btn-info" %>
+</div>
+</div>
+
+
