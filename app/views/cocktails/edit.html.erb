@@ -1,0 +1,11 @@
+<h1>Edit</h1>
+<%= simple_form_for(@cocktail) do |f| %>
+  <p> Restaurant name<%= f.input :name %></p>
+  <%= f.input :@ingredient_id %>
+  <%= f.input :@dose_id %>
+
+
+
+
+  <%= f.submit "Change a cocktail", class: "btn btn-primary" %>
+<% end %>

@@ -7,27 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # json = ActiveSupport::JSON.decode(File.read('http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'))
 
-# json.each do |a|
-#   Ingredient.create!(a['ingredient'], without_protection: true)
-# end
 # require 'json'
 #   require 'open-uri'
 
-#  ingredients = open("http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list").read
-#   ingredients_hash = JSON.parse(ingredients)
-
-
-
-#     ingredients_hash.each do |a|
-#   Ingredient.create!(a['name'], without_protection: true)
+#  ingredients = JSON.parse(open("http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list").read)
+#   ingredients["drinks"].each do |ing_hash|
+#     ingredient_name = ing_hash["strIngredient1"]
+#     Ingredient.create!(name: ingredient_name)
 #   end
 
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
-Ingredient.create(name: "chocolate")
-Ingredient.create(name: "mustard")
-Ingredient.create(name: "pickles")
-Ingredient.create(name: "soy")
-Ingredient.create(name: "peanut")
-Ingredient.create(name: "onion")
+
+(1..5).times

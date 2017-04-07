@@ -1,0 +1,9 @@
+<h1>Show</h1>
+<%= simple_form_for(@cocktail) do |f| %>
+    <p> Cocktail name<%= f.input :name %></p>
+  <%= f.input :ingredient_id %>
+  <%= f.input :dose_id %>
+
+
+<%= link_to "Home", cocktails_path, class: "btn btn-primary" %>
+  <% end %>
