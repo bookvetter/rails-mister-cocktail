@@ -5,3 +5,12 @@
   <%= f.submit "Change a cocktail", class: "btn btn-primary" %>
 <% end %>
 </div>
+
+<div class="text-center">
+<h1>New</h1>
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name %>
+
+  <%= f.submit class: "btn btn-primary"%>
+<% end %>
+</div>

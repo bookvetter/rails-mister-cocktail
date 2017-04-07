@@ -11,8 +11,18 @@
 
 </ul>
 
+<h2>Create a dose</h2>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient, collection: @ingredients %>
+  <%= f.submit %>
+<% end %>
+<%#= link_to "Create a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-info" %>
+
 <%= link_to "Return to cocktail list", cocktails_path, class: "btn btn-info" %>
 </div>
 </div>
+
+
 
 

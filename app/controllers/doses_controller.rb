@@ -1,4 +1,9 @@
 class DosesController < ApplicationController
+  def new
+    @cocktail = Cocktail.find(params[:cocktail_id])
+    @dose = Dose.new
+    @ingredients = Ingredient.where.not(id: @cocktail.ingredients.map {|i| i.id}).order(name: :asc)
+  end
 
   def create
     @dose = Dose.new(dose_params)
@@ -7,7 +12,7 @@ class DosesController < ApplicationController
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
-      @ingredients = Ingredient.all
+      @ingredients = Ingredient.where.not(id: @cocktail.ingredients.map {|i| i.id}).order(name: :asc)
       render "drinks/show"
   end
 end
