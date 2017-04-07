@@ -1,13 +1,7 @@
 <div class="text-center">
 <h1>Edit</h1>
 <%= simple_form_for(@cocktail) do |f| %>
-  <p> Cocktail name<%= f.input :name %></p>
-  <%= f.input :@ingredient.name %>
-  <%= f.input :@dose.description %>
-
-
-
-
+  <%= f.input :name %>
   <%= f.submit "Change a cocktail", class: "btn btn-primary" %>
 <% end %>
 </div>
