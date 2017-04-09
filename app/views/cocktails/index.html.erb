@@ -1,3 +1,7 @@
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
 <div class="text-center">
 <h1>Index</h1>
 
@@ -7,10 +11,18 @@
 <ul>
   <% @cocktails.each do |cocktail| %>
     <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+
+
     <%#= link_to "Edit", edit_cocktail_path(cocktail), class: "btn btn-warning" %>
   <% end %>
 </ul>
 
-<%= link_to "Creat a new cocktail", new_cocktail_path, class: "btn btn-warning" %>
+<%= link_to "Create a new cocktail", new_cocktail_path, class: "btn btn-primary" %>
+</div>
+
+<%= link_to "See the ingredients", ingredients_dogpaw_path, class: "btn btn-primary" %>
+</div>
+</div>
+</div>
 </div>
 

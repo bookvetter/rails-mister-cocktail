@@ -1,13 +1,13 @@
 class CocktailsController < ApplicationController
 
   def index
-    @cocktails = Cocktail.all
+    @cocktails = Cocktail.order(name: :asc)
   end
 
   def show
     @cocktail = Cocktail.find(params[:id])
     @dose = Dose.new
-    @ingredients = Ingredient.all
+    @ingredients = Ingredient.where.not(id: @cocktail.ingredients.map {|i| i.id}).order(name: :asc)
   end
 
   def edit

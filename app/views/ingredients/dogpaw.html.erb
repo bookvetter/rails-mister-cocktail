@@ -1,0 +1,19 @@
+<div class="text-center">
+<h1>Ingredients</h1>
+
+<ul>
+  <% @ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %></li>
+
+    <%#= link_to "Edit", edit_cocktail_path(cocktail), class: "btn btn-warning" %>
+  <% end %>
+</ul>
+
+
+<%= link_to "Add a new ingredient", ingredients_snaketongue_path, class: "btn btn-primary" %>
+</div>
+
+
+<%= link_to "Return Home", cocktails_path, class: "btn btn-success" %>
+</div>
+

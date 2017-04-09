@@ -13,7 +13,7 @@ class DosesController < ApplicationController
       redirect_to cocktail_path(@cocktail)
     else
       @ingredients = Ingredient.where.not(id: @cocktail.ingredients.map {|i| i.id}).order(name: :asc)
-      render "drinks/show"
+      render "cocktails/show"
   end
 end
 

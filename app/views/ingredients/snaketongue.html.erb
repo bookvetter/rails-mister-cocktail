@@ -1,0 +1,15 @@
+<div class="text-center">
+<h1>Ingredients addition</h1>
+
+<%= simple_form_for @ingredient do |f| %>
+  <%= f.input :name %>
+  <%= f.submit class: "btn btn-success" %>
+<% end %>
+
+
+<%= link_to "See the ingredients", ingredients_dogpaw_path, class: "btn btn-primary" %>
+
+
+
+<%= link_to "Return Home", cocktails_path, class: "btn btn-success" %>
+</div>

@@ -1,3 +1,7 @@
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
 <div class="text-center">
 <h1>Show</h1>
 
@@ -6,7 +10,7 @@
 <h1><%= @cocktail.name %></h1>
 <ul>
   <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.ingredient.name %> - <%= dose.description %></li>
+    <li><%= dose.description %> -- <%= dose.ingredient.name %></li>
     <% end %>
 
 </ul>
@@ -15,11 +19,14 @@
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
   <%= f.association :ingredient, collection: @ingredients %>
-  <%= f.submit %>
+  <%= f.submit class: "btn btn-primary"%>
 <% end %>
 <%#= link_to "Create a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-info" %>
-
-<%= link_to "Return to cocktail list", cocktails_path, class: "btn btn-info" %>
+<br>
+<%= link_to "Return to cocktail list", cocktails_path, class: "btn btn-success" %>
+</div>
+</div>
+</div>
 </div>
 </div>
 

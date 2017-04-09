@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'cocktails#index'
+
+  root 'cocktails#home'
+  get 'ingredients/dogpaw'
+  get 'ingredients/snaketongue'
    resources :cocktails do
     resources :doses
 
