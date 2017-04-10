@@ -23,6 +23,10 @@
 <% end %>
 <%#= link_to "Create a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-info" %>
 <br>
+<%= link_to "Destroy the cocktail", cocktails_path(@cocktail), class: "btn btn-warning",
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+
 <%= link_to "Return to cocktail list", cocktails_path, class: "btn btn-success" %>
 </div>
 </div>
